@@ -1,8 +1,8 @@
 {
-  "name": "firebot-custom-script-starter",
-  "scriptOutputName": "starterScript",
+  "name": "firebot-color-script",
+  "scriptOutputName": "colorscript",
   "version": "1.0.0",
-  "description": "A starter Firebot custom script",
+  "description": "color custom script",
   "main": "",
   "scripts": {
     "build": "webpack",
@@ -10,11 +10,12 @@
     "copy": "node ./scripts/copy-build.js",
     "test": "jest"
   },
-  "author": "ebiggz",
+  "author": "cky",
   "license": "GNU3",
   "devDependencies": {
     "@crowbartools/firebot-custom-scripts-types": "^5.53.2",
     "@types/node": "^14.14.6",
+    "@types/tinycolor2": "^1.4.3",
     "jest": "^26.6.3",
     "terser-webpack-plugin": "^4.2.3",
     "ts-jest": "^26.4.4",
@@ -22,5 +23,8 @@
     "typescript": "^4.0.5",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.1.0"
+  },
+  "dependencies": {
+    "tinycolor2": "^1.6.0"
   }
 }

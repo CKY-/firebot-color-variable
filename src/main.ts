@@ -1,32 +1,25 @@
 import { Firebot } from "@crowbartools/firebot-custom-scripts-types";
-
+import { colorOutput } from "./variables/color-output";
 interface Params {
-  message: string;
 }
 
 const script: Firebot.CustomScript<Params> = {
   getScriptManifest: () => {
     return {
-      name: "Starter Custom Script",
-      description: "A starter custom script for build",
-      author: "SomeDev",
+      name: "Color Custom Script",
+      description: "Color custom script",
+      author: "CKY",
       version: "1.0",
       firebotVersion: "5",
     };
   },
   getDefaultParameters: () => {
-    return {
-      message: {
-        type: "string",
-        default: "Hello World!",
-        description: "Message",
-        secondaryDescription: "Enter a message here",
-      },
-    };
+    return {};
   },
   run: (runRequest) => {
     const { logger } = runRequest.modules;
-    logger.info(runRequest.parameters.message);
+    const replaceVariableManager = runRequest.modules.replaceVariableManager
+    replaceVariableManager.registerReplaceVariable(colorOutput);
   },
 };
 
